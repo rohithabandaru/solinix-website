@@ -75,9 +75,9 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-5">
             <a href="#" className="flex items-center group inline-flex">
               <img
-                src="/images/solinix-logo.png"
+                src="/images/solinix-logo-white.svg"
                 alt="Solinix Software Solutions"
-                className="h-12 w-auto object-contain invert mix-blend-screen contrast-125 group-hover:scale-105 transition-transform duration-300"
+                className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </a>
 

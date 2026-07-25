@@ -1,6 +1,78 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiCheck, FiZap } from 'react-icons/fi';
+import { FiArrowRight, FiCheck, FiZap, FiCpu, FiCode, FiLayers, FiPenTool } from 'react-icons/fi';
+import {
+  FaReact, FaNodeJs, FaPython, FaJava, FaAws, FaDocker, FaAndroid, FaFigma, FaWordpress, FaApple, FaGoogle, FaCloud
+} from 'react-icons/fa';
+import {
+  SiNextdotjs, SiPostgresql, SiMysql, SiMongodb, SiTailwindcss, SiTypescript,
+  SiFlutter, SiKubernetes, SiRedis, SiGoogleanalytics, SiFirebase
+} from 'react-icons/si';
+
+// ─── Technology Groups (from Technologies section) ───
+const techGroups = [
+  {
+    category: 'Frontend',
+    color: 'from-cyan-600 to-blue-600',
+    items: [
+      { name: 'React', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+      { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
+      { name: 'Tailwind', icon: SiTailwindcss, color: 'text-cyan-300' },
+    ],
+  },
+  {
+    category: 'Backend',
+    color: 'from-emerald-600 to-cyan-600',
+    items: [
+      { name: 'Node.js', icon: FaNodeJs, color: 'text-emerald-400' },
+      { name: 'Python', icon: FaPython, color: 'text-amber-400' },
+      { name: 'Java', icon: FaJava, color: 'text-orange-400' },
+    ],
+  },
+  {
+    category: 'Mobile',
+    color: 'from-purple-600 to-indigo-600',
+    items: [
+      { name: 'Flutter', icon: SiFlutter, color: 'text-blue-400' },
+      { name: 'Android', icon: FaAndroid, color: 'text-emerald-400' },
+    ],
+  },
+  {
+    category: 'Cloud & DevOps',
+    color: 'from-amber-600 to-orange-500',
+    items: [
+      { name: 'AWS', icon: FaAws, color: 'text-amber-400' },
+      { name: 'Azure', icon: FaCloud, color: 'text-blue-400' },
+      { name: 'Docker', icon: FaDocker, color: 'text-cyan-400' },
+      { name: 'Kubernetes', icon: SiKubernetes, color: 'text-blue-500' },
+    ],
+  },
+  {
+    category: 'Databases',
+    color: 'from-blue-600 to-indigo-600',
+    items: [
+      { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
+      { name: 'MySQL', icon: SiMysql, color: 'text-amber-400' },
+      { name: 'MongoDB', icon: SiMongodb, color: 'text-emerald-400' },
+      { name: 'Redis', icon: SiRedis, color: 'text-red-400' },
+    ],
+  },
+];
+
+// Flat list for the animated logo marquee strip
+const allTech = [
+  { name: 'React', icon: FaReact, color: 'text-cyan-400' },
+  { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+  { name: 'Node.js', icon: FaNodeJs, color: 'text-emerald-400' },
+  { name: 'Python', icon: FaPython, color: 'text-amber-400' },
+  { name: 'Java', icon: FaJava, color: 'text-orange-400' },
+  { name: 'AWS', icon: FaAws, color: 'text-amber-400' },
+  { name: 'Azure', icon: FaCloud, color: 'text-blue-400' },
+  { name: 'Docker', icon: FaDocker, color: 'text-cyan-400' },
+  { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
+  { name: 'MySQL', icon: SiMysql, color: 'text-amber-400' },
+];
 
 const services = [
   {
@@ -8,48 +80,88 @@ const services = [
     title: 'Custom Software Development',
     description: 'Scalable software solutions tailored to your specific business requirements, built with modern enterprise-grade technologies.',
     features: ['Web Applications', 'Enterprise Systems', 'API Development', 'System Integration'],
+    technologies: [
+      { name: 'React', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Node.js', icon: FaNodeJs, color: 'text-emerald-400' },
+      { name: 'Python', icon: FaPython, color: 'text-amber-400' },
+      { name: 'Java', icon: FaJava, color: 'text-orange-400' },
+      { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
+      { name: 'Docker', icon: FaDocker, color: 'text-cyan-300' },
+    ],
     image: '/images/services/software-dev.png',
-    overlay: 'from-slate-900/90 via-blue-950/80 to-slate-900/70',
+    overlay: 'from-slate-900/95 via-blue-950/85 to-slate-900/75',
   },
   {
     id: 'website-dev',
     title: 'Website Development',
     description: 'Responsive, fast and SEO-friendly websites with stunning designs that drive real results and business growth.',
     features: ['Corporate Websites', 'Landing Pages', 'E-Commerce Stores', 'CMS Platforms'],
+    technologies: [
+      { name: 'React', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+      { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
+      { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-300' },
+      { name: 'WordPress', icon: FaWordpress, color: 'text-blue-400' },
+    ],
     image: '/images/services/website-dev.png',
-    overlay: 'from-slate-900/90 via-indigo-950/80 to-slate-900/70',
+    overlay: 'from-slate-900/95 via-indigo-950/85 to-slate-900/75',
   },
   {
     id: 'mobile-app',
     title: 'Mobile App Development',
     description: 'Android, iOS & cross-platform apps with seamless user experiences and native-level performance.',
     features: ['iOS & Android', 'React Native', 'Flutter', 'PWA Apps'],
+    technologies: [
+      { name: 'React Native', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'Flutter', icon: SiFlutter, color: 'text-blue-400' },
+      { name: 'Android', icon: FaAndroid, color: 'text-emerald-400' },
+      { name: 'iOS', icon: FaApple, color: 'text-white' },
+      { name: 'Firebase', icon: SiFirebase, color: 'text-amber-400' },
+    ],
     image: '/images/services/mobile-app.png',
-    overlay: 'from-slate-900/90 via-blue-950/80 to-slate-900/70',
+    overlay: 'from-slate-900/95 via-blue-950/85 to-slate-900/75',
   },
   {
     id: 'ui-ux',
     title: 'UI/UX Design',
     description: 'Creative and intuitive designs that enhance engagement. User-centered, conversion-optimized and beautifully crafted.',
     features: ['Wireframing', 'Prototyping', 'Design Systems', 'User Research'],
+    technologies: [
+      { name: 'Figma', icon: FaFigma, color: 'text-purple-400' },
+      { name: 'Wireframing', icon: FiLayers, color: 'text-pink-400' },
+      { name: 'Design Systems', icon: FiPenTool, color: 'text-cyan-300' },
+      { name: 'Prototyping', icon: FiCode, color: 'text-amber-300' },
+    ],
     image: '/images/services/ui-ux.png',
-    overlay: 'from-slate-900/90 via-indigo-950/80 to-slate-900/70',
+    overlay: 'from-slate-900/95 via-indigo-950/85 to-slate-900/75',
   },
   {
     id: 'digital-marketing',
     title: 'Digital Marketing',
     description: 'Result-driven marketing strategies to grow your brand and reach. SEO, social media, paid campaigns and more.',
     features: ['SEO & SEM', 'Social Media', 'Content Marketing', 'Analytics'],
+    technologies: [
+      { name: 'Google Analytics', icon: SiGoogleanalytics, color: 'text-amber-400' },
+      { name: 'Google Ads', icon: FaGoogle, color: 'text-blue-400' },
+      { name: 'SEO Suite', icon: FiZap, color: 'text-emerald-400' },
+      { name: 'Meta Ads', icon: FiCode, color: 'text-cyan-300' },
+    ],
     image: '/images/services/digital-marketing.png',
-    overlay: 'from-slate-900/90 via-blue-950/80 to-slate-900/70',
+    overlay: 'from-slate-900/95 via-blue-950/85 to-slate-900/75',
   },
   {
     id: 'cloud-maintenance',
     title: 'Cloud & Maintenance',
     description: 'Secure hosting, cloud deployment and ongoing support to keep your software running at peak performance 24/7.',
     features: ['AWS & Azure', 'DevOps & CI/CD', 'Performance Monitoring', '24/7 Support'],
+    technologies: [
+      { name: 'AWS', icon: FaAws, color: 'text-amber-400' },
+      { name: 'Docker', icon: FaDocker, color: 'text-cyan-400' },
+      { name: 'Kubernetes', icon: SiKubernetes, color: 'text-blue-400' },
+      { name: 'Redis', icon: SiRedis, color: 'text-red-400' },
+    ],
     image: '/images/services/cloud.png',
-    overlay: 'from-slate-900/90 via-indigo-950/80 to-slate-900/70',
+    overlay: 'from-slate-900/95 via-indigo-950/85 to-slate-900/75',
   },
 ];
 
@@ -102,7 +214,7 @@ export default function Services() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed"
           >
-            From initial wireframes to cloud launch, we engineer high-performing software designed to win users and scale reliably.
+            From initial wireframes to cloud launch, we engineer high-performing software powered by cutting-edge technologies.
           </motion.p>
         </div>
 
@@ -118,7 +230,7 @@ export default function Services() {
             <motion.div
               key={service.id}
               variants={cardVariants}
-              className="group relative rounded-3xl overflow-hidden min-h-[420px] flex flex-col justify-end shadow-lg hover:shadow-2xl hover:shadow-blue-900/15 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              className="group relative rounded-3xl overflow-hidden min-h-[460px] flex flex-col justify-end shadow-lg hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-500 hover:-translate-y-2 cursor-pointer border border-slate-200/60"
             >
               {/* Background Image with Hover Zoom */}
               <div className="absolute inset-0">
@@ -130,22 +242,22 @@ export default function Services() {
               </div>
 
               {/* Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-t ${service.overlay} transition-opacity duration-500 group-hover:opacity-90`} />
+              <div className={`absolute inset-0 bg-gradient-to-t ${service.overlay} transition-opacity duration-500 group-hover:opacity-95`} />
 
               {/* Content */}
               <div className="relative z-10 p-7 flex flex-col h-full justify-end">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-2.5 drop-shadow-md">
+                <h3 className="text-xl font-bold text-white mb-2 drop-shadow-md">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-white/80 leading-relaxed mb-5">
+                <p className="text-sm text-white/80 leading-relaxed mb-4">
                   {service.description}
                 </p>
 
                 {/* Feature List */}
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                <div className="grid grid-cols-2 gap-x-3 gap-y-2 mb-5">
                   {service.features.map((f, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs text-white/90 font-medium">
                       <div className="w-4 h-4 rounded-full bg-white/20 border border-white/30 flex items-center justify-center shrink-0 backdrop-blur-sm">
@@ -156,20 +268,135 @@ export default function Services() {
                   ))}
                 </div>
 
+                {/* Technologies Used Section */}
+                <div className="mb-5 pt-3.5 border-t border-white/15">
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-cyan-300 mb-2.5">
+                    <FiCpu className="text-xs" />
+                    <span>Technologies Used</span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {service.technologies.map((tech, idx) => {
+                      const IconComponent = tech.icon;
+                      return (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md text-xs font-semibold text-white transition-all hover:scale-105"
+                        >
+                          <IconComponent className={`text-xs ${tech.color}`} />
+                          <span>{tech.name}</span>
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 {/* CTA */}
-                <div className="pt-4 border-t border-white/20">
+                <div className="pt-3 border-t border-white/15 flex items-center justify-between">
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-blue-300 transition-colors group/link"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-cyan-300 transition-colors group/link"
                   >
-                    <span>Learn More</span>
-                    <FiArrowRight className="group-hover/link:translate-x-1.5 transition-transform duration-300" />
+                    <span>Explore Service</span>
+                    <FiArrowRight className="group-hover/link:translate-x-1.5 transition-transform duration-300 text-cyan-400" />
                   </a>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* ─── Technologies We Use ─── */}
+        <div className="mt-24 pt-20 border-t border-slate-200">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4"
+            >
+              <FiLayers className="text-sm" />
+              <span>TECHNOLOGIES WE USE</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
+            >
+              Powered by{' '}
+              <span className="text-gradient-primary">Modern Technologies</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed"
+            >
+              We leverage industry-leading tools and frameworks to build solutions that are fast, scalable, and future-proof.
+            </motion.p>
+          </div>
+
+          {/* Animated Logo Marquee Strip */}
+          <div className="overflow-hidden mb-16 relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+            <div className="flex gap-8 animate-marquee whitespace-nowrap">
+              {[...allTech, ...allTech].map((tech, i) => {
+                const Icon = tech.icon;
+                return (
+                  <div
+                    key={i}
+                    className="glass-card border border-slate-200/90 rounded-2xl px-6 py-4 flex items-center gap-3 shrink-0 hover:border-blue-500/40 bg-white shadow-sm transition-colors"
+                  >
+                    <Icon className={`text-2xl ${tech.color === 'text-white' ? 'text-slate-900' : tech.color}`} />
+                    <span className="text-sm font-semibold text-slate-800">{tech.name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Tech Categories Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techGroups.map((group, gIndex) => (
+              <motion.div
+                key={group.category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: gIndex * 0.1 }}
+                className="glass-card rounded-3xl border border-slate-200/90 p-6 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1 bg-white shadow-sm"
+              >
+                {/* Category Header */}
+                <div className="flex items-center gap-3 mb-5 pb-4 border-b border-slate-100">
+                  <div className={`w-2 h-6 rounded-full bg-gradient-to-b ${group.color}`} />
+                  <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">{group.category}</h3>
+                </div>
+
+                {/* Tech Items */}
+                <div className="grid grid-cols-2 gap-3">
+                  {group.items.map((tech) => {
+                    const TechIcon = tech.icon;
+                    return (
+                      <div
+                        key={tech.name}
+                        className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-slate-50/80 hover:bg-white hover:border-blue-300 hover:shadow-sm hover:scale-105 transition-all cursor-default"
+                      >
+                        <TechIcon className={`text-xl ${tech.color === 'text-white' ? 'text-slate-900' : tech.color} shrink-0`} />
+                        <span className="text-xs font-semibold text-slate-800 truncate">{tech.name}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Bottom CTA Banner */}
         <motion.div
@@ -180,14 +407,14 @@ export default function Services() {
           className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-blue-50 via-indigo-50/70 to-blue-50 border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm"
         >
           <div>
-            <h4 className="text-xl font-bold text-slate-900 mb-1">Have a Product Idea in Mind?</h4>
-            <p className="text-sm text-slate-600">Let's build it together. Get an honest tech blueprint &amp; time estimate within 24 hours.</p>
+            <h4 className="text-xl font-bold text-slate-900 mb-1">Have a Custom Technology Requirement?</h4>
+            <p className="text-sm text-slate-600">We adapt to your tech stack. Get a free tech consultation &amp; architecture review within 24 hours.</p>
           </div>
           <a
             href="#contact"
             className="shrink-0 px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 flex items-center gap-2 transition-all hover:scale-[1.02]"
           >
-            Get Free Consultation
+            Get Free Tech Consultation
             <FiArrowRight />
           </a>
         </motion.div>
@@ -196,3 +423,4 @@ export default function Services() {
     </section>
   );
 }
+

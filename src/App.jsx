@@ -7,7 +7,7 @@ import Products from './components/Products';
 import Stats from './components/Stats';
 import WhyChooseUs from './components/WhyChooseUs';
 import Process from './components/Process';
-import Technologies from './components/Technologies';
+
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
@@ -41,8 +41,7 @@ export default function App() {
         {/* 8. Development Process */}
         <Process />
 
-        {/* 9. Technologies */}
-        <Technologies />
+
 
         {/* 10. Portfolio */}
         <Portfolio />

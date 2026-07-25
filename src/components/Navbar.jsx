@@ -45,9 +45,9 @@ export default function Navbar() {
           {/* Logo on Left */}
           <a href="#" className="flex items-center group">
             <img
-              src="/images/solinix-logo.png"
+              src="/images/solinix-logo.svg"
               alt="Solinix Software Solutions"
-              className="h-10 sm:h-14 w-auto object-contain mix-blend-multiply contrast-125 group-hover:scale-105 transition-transform duration-300"
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </a>
 
