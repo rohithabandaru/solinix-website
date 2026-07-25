@@ -5,10 +5,10 @@ import { FiUsers, FiBriefcase, FiPackage, FiStar } from 'react-icons/fi';
 const stats = [
   {
     icon: FiUsers,
-    number: 10,
+    number: 50,
     suffix: '+',
     label: 'Happy Clients',
-    description: 'Businesses trust us to deliver results',
+    description: 'Startups & enterprises trust us',
     color: 'from-blue-600 to-indigo-600',
     textColor: 'text-blue-600',
     glow: 'shadow-blue-500/20',
@@ -25,10 +25,10 @@ const stats = [
   },
   {
     icon: FiPackage,
-    number: 5,
-    suffix: '+',
-    label: 'Products Built',
-    description: 'Real-world SaaS products in production',
+    number: 99,
+    suffix: '.9%',
+    label: 'Platform Uptime',
+    description: 'Enterprise-grade reliability',
     color: 'from-blue-600 to-indigo-600',
     textColor: 'text-blue-600',
     glow: 'shadow-blue-500/20',

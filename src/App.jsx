@@ -3,13 +3,16 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import Technologies from './components/Technologies';
 import Products from './components/Products';
 import Stats from './components/Stats';
 import WhyChooseUs from './components/WhyChooseUs';
 import Process from './components/Process';
-
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
+import Team from './components/Team';
+import FAQ from './components/FAQ';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -29,19 +32,20 @@ export default function App() {
         {/* 4. Services */}
         <Services />
 
-        {/* 5. Products */}
+        {/* 5. Technologies */}
+        <Technologies />
+
+        {/* 6. Products */}
         <Products />
 
-        {/* 6. Statistics */}
+        {/* 7. Statistics */}
         <Stats />
 
-        {/* 7. Why Choose Solinix */}
+        {/* 8. Why Choose Solinix */}
         <WhyChooseUs />
 
-        {/* 8. Development Process */}
+        {/* 9. Development Process */}
         <Process />
-
-
 
         {/* 10. Portfolio */}
         <Portfolio />
@@ -49,7 +53,16 @@ export default function App() {
         {/* 11. Testimonials */}
         <Testimonials />
 
-        {/* 12. Contact */}
+        {/* 12. Team */}
+        <Team />
+
+        {/* 13. FAQ */}
+        <FAQ />
+
+        {/* 14. Blog */}
+        <Blog />
+
+        {/* 15. Contact */}
         <Contact />
       </main>
 
