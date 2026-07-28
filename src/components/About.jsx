@@ -146,8 +146,10 @@ export default function About() {
             {/* Main Team Image Container */}
             <div className="relative rounded-3xl overflow-hidden border border-slate-200/90 shadow-2xl group">
               <img
-                src="/images/about-team.png"
+                src="/images/about-team.webp"
                 alt="Solinix Software Engineering Team"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />

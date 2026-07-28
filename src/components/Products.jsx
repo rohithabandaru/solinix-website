@@ -14,7 +14,7 @@ const products = [
     icon: FiHome,
     badge: 'Live Platform',
     badgeDot: 'bg-blue-600',
-    image: '/images/product-pgmove.png',
+    image: '/images/product-pgmove.webp',
     features: [
       'Smart Property Search',
       'Owner Dashboard',
@@ -39,7 +39,7 @@ const products = [
     icon: FiMonitor,
     badge: 'Live Platform',
     badgeDot: 'bg-blue-600',
-    image: '/images/product-stayzzy.png',
+    image: '/images/product-stayzzy.webp',
     features: [
       'Tenant Management',
       'Automated Rent Collection',
@@ -213,6 +213,8 @@ export default function Products() {
                         <img
                           src={product.image}
                           alt={product.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                         />
                       ) : (

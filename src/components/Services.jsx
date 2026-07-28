@@ -23,7 +23,7 @@ const services = [
       { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
       { name: 'Docker', icon: FaDocker, color: 'text-cyan-300' },
     ],
-    image: '/images/services/software-dev.png',
+    image: '/images/services/software-dev.webp',
     overlay: 'from-slate-900/95 via-blue-950/85 to-slate-900/75',
   },
   {
@@ -38,7 +38,7 @@ const services = [
       { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-300' },
       { name: 'WordPress', icon: FaWordpress, color: 'text-blue-400' },
     ],
-    image: '/images/services/website-dev.png',
+    image: '/images/services/website-dev.webp',
     overlay: 'from-slate-900/95 via-indigo-950/85 to-slate-900/75',
   },
   {
@@ -53,7 +53,7 @@ const services = [
       { name: 'iOS', icon: FaApple, color: 'text-white' },
       { name: 'Firebase', icon: SiFirebase, color: 'text-amber-400' },
     ],
-    image: '/images/services/mobile-app.png',
+    image: '/images/services/mobile-app.webp',
     overlay: 'from-slate-900/95 via-blue-950/85 to-slate-900/75',
   },
   {
@@ -67,7 +67,7 @@ const services = [
       { name: 'Design Systems', icon: FiPenTool, color: 'text-cyan-300' },
       { name: 'Prototyping', icon: FiCode, color: 'text-amber-300' },
     ],
-    image: '/images/services/ui-ux.png',
+    image: '/images/services/ui-ux.webp',
     overlay: 'from-slate-900/95 via-indigo-950/85 to-slate-900/75',
   },
   {
@@ -81,7 +81,7 @@ const services = [
       { name: 'SEO Suite', icon: FiZap, color: 'text-emerald-400' },
       { name: 'Meta Ads', icon: FiCode, color: 'text-cyan-300' },
     ],
-    image: '/images/services/digital-marketing.png',
+    image: '/images/services/digital-marketing.webp',
     overlay: 'from-slate-900/95 via-blue-950/85 to-slate-900/75',
   },
   {
@@ -95,7 +95,7 @@ const services = [
       { name: 'Kubernetes', icon: SiKubernetes, color: 'text-blue-400' },
       { name: 'Redis', icon: SiRedis, color: 'text-red-400' },
     ],
-    image: '/images/services/cloud.png',
+    image: '/images/services/cloud.webp',
     overlay: 'from-slate-900/95 via-indigo-950/85 to-slate-900/75',
   },
 ];
@@ -172,6 +172,8 @@ export default function Services() {
                 <img
                   src={service.image}
                   alt={service.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>

@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Technologies from './components/Technologies';
-import Products from './components/Products';
-import Stats from './components/Stats';
-import WhyChooseUs from './components/WhyChooseUs';
-import Process from './components/Process';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import Team from './components/Team';
-import FAQ from './components/FAQ';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+
+// Lazy-loaded below-the-fold section components for optimal initial paint performance
+const About = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Technologies = lazy(() => import('./components/Technologies'));
+const Products = lazy(() => import('./components/Products'));
+const Stats = lazy(() => import('./components/Stats'));
+const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
+const Process = lazy(() => import('./components/Process'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Team = lazy(() => import('./components/Team'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Blog = lazy(() => import('./components/Blog'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+const SectionLoader = () => (
+  <div className="py-16 flex items-center justify-center">
+    <div className="w-8 h-8 border-3 border-blue-600 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 export default function App() {
   return (
@@ -23,51 +31,30 @@ export default function App() {
       <Navbar />
 
       <main>
-        {/* 2. Hero Section */}
+        {/* 2. Hero Section (Above the fold, synchronous) */}
         <Hero />
 
-        {/* 3. About Us */}
-        <About />
-
-        {/* 4. Services */}
-        <Services />
-
-        {/* 5. Technologies */}
-        <Technologies />
-
-        {/* 6. Products */}
-        <Products />
-
-        {/* 7. Statistics */}
-        <Stats />
-
-        {/* 8. Why Choose Solinix */}
-        <WhyChooseUs />
-
-        {/* 9. Development Process */}
-        <Process />
-
-        {/* 10. Portfolio */}
-        <Portfolio />
-
-        {/* 11. Testimonials */}
-        <Testimonials />
-
-        {/* 12. Team */}
-        <Team />
-
-        {/* 13. FAQ */}
-        <FAQ />
-
-        {/* 14. Blog */}
-        <Blog />
-
-        {/* 15. Contact */}
-        <Contact />
+        {/* Below-the-fold sections loaded dynamically */}
+        <Suspense fallback={<SectionLoader />}>
+          <About />
+          <Services />
+          <Technologies />
+          <Products />
+          <Stats />
+          <WhyChooseUs />
+          <Process />
+          <Portfolio />
+          <Testimonials />
+          <Team />
+          <FAQ />
+          <Blog />
+          <Contact />
+        </Suspense>
       </main>
 
-      {/* 13. Footer */}
-      <Footer />
+      <Suspense fallback={<SectionLoader />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
