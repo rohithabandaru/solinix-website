@@ -94,7 +94,7 @@ export default function Team() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
           >
-            Meet the Visionaries Driving <br className="hidden sm:inline" />
+            Our Team — Meet the Visionaries Driving <br className="hidden sm:inline" />
             <span className="text-gradient-primary">Engineering Excellence</span>
           </motion.h2>
 

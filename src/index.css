@@ -66,10 +66,7 @@
 }
 
 .text-gradient-primary {
-  background: linear-gradient(135deg, #0A346C 0%, #2563EB 50%, #7E4FA4 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #2563EB;
 }
 
 .text-gradient-accent {
