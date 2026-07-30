@@ -53,7 +53,7 @@ export default function Hero() {
               className="text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]"
             >
               We Build Software People{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700">
+              <span className="text-transparent bg-clip-text bg-blue-600">
                 Love to Use.
               </span>
             </motion.h1>
@@ -77,7 +77,7 @@ export default function Hero() {
             >
               <a
                 href="#services"
-                className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group"
+                className="w-full sm:w-auto px-8 py-4 text-sm font-bold text-white rounded-2xl bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
                 <span>Explore Services</span>
                 <FiArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />

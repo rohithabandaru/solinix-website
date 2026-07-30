@@ -137,7 +137,7 @@ export default function FAQ() {
           <p className="text-sm text-slate-600 mt-2 mb-6">Our Principal Solution Architects are available to answer your technical questions directly.</p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-105"
           >
             <span>Ask an Architect</span>
             <FiArrowRight />

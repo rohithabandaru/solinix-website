@@ -76,7 +76,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs xl:text-sm text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-700 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 active:scale-95 group"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs xl:text-sm text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 active:scale-95 group"
             >
               <FiStar className="text-blue-200 group-hover:rotate-12 transition-transform" />
               <span>Get Free Consultation</span>
@@ -124,7 +124,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-3 font-semibold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 rounded-xl shadow-md shadow-blue-500/20 flex items-center justify-center gap-2 text-sm"
+                  className="w-full text-center py-3 font-semibold text-white bg-blue-600 rounded-xl shadow-md shadow-blue-500/20 flex items-center justify-center gap-2 text-sm"
                 >
                   <FiPhone />
                   <span>Get Free Consultation</span>

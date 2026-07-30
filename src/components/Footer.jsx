@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
             <a
               href="#contact"
-              className="shrink-0 px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-blue-500/25 flex items-center gap-2 transition-all hover:scale-[1.02]"
+              className="shrink-0 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-lg shadow-blue-500/25 flex items-center gap-2 transition-all hover:scale-[1.02]"
             >
               Get Free Consultation
               <FiArrowRight />
@@ -192,7 +192,7 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 hover:from-blue-500 hover:to-indigo-500 transition-all"
+                    className="w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 hover:from-blue-500 hover:to-indigo-500 transition-all"
                   >
                     Subscribe <FiArrowRight />
                   </button>
