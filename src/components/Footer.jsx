@@ -30,10 +30,10 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-  { icon: FiTwitter, href: '#', label: 'Twitter' },
-  { icon: FiInstagram, href: '#', label: 'Instagram' },
-  { icon: FiGithub, href: '#', label: 'GitHub' },
+  { icon: FiLinkedin, href: 'https://linkedin.com/company/solinix', label: 'LinkedIn' },
+  { icon: FiTwitter, href: 'https://twitter.com/solinix', label: 'Twitter' },
+  { icon: FiInstagram, href: 'https://instagram.com/solinix', label: 'Instagram' },
+  { icon: FiGithub, href: 'https://github.com/solinix', label: 'GitHub' },
 ];
 
 export default function Footer() {

@@ -185,7 +185,7 @@ export default function Products() {
                           href={`https://${product.website}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all hover:scale-[1.02] active:scale-95"
                         >
                           <span>Visit {product.name}</span>
                           <FiExternalLink className="text-xs" />

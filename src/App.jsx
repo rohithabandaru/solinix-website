@@ -14,6 +14,8 @@ const Portfolio = lazy(() => import('./components/Portfolio'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
+const ProjectEstimator = lazy(() => import('./components/ProjectEstimator'));
+const QuickConnectWidget = lazy(() => import('./components/QuickConnectWidget'));
 const Footer = lazy(() => import('./components/Footer'));
 
 const SectionLoader = () => (
@@ -41,6 +43,7 @@ export default function App() {
           <Products />
           <WhyChooseUs />
           <Process />
+          <ProjectEstimator />
           <Portfolio />
           <Testimonials />
           <FAQ />
@@ -50,6 +53,7 @@ export default function App() {
 
       <Suspense fallback={<SectionLoader />}>
         <Footer />
+        <QuickConnectWidget />
       </Suspense>
     </div>
   );

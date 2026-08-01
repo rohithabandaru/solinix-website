@@ -145,9 +145,10 @@ export default function Portfolio() {
                       href={project.link || '#contact'}
                       target={project.link ? '_blank' : undefined}
                       rel="noopener noreferrer"
-                      className={`${project.accentText} hover:opacity-80 transition-opacity`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm shadow-blue-500/20 transition-all hover:scale-105"
                     >
-                      {project.link ? <FiExternalLink className="text-base" /> : <FiArrowRight className="text-base" />}
+                      <span>{project.link ? 'Visit' : 'View'}</span>
+                      {project.link ? <FiExternalLink className="text-xs" /> : <FiArrowRight className="text-xs" />}
                     </a>
                   </div>
                 </div>
