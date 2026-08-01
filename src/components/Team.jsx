@@ -4,7 +4,7 @@ import { FiLinkedin, FiGithub, FiTwitter, FiUsers, FiAward } from 'react-icons/f
 
 const teamMembers = [
   {
-    name: 'Dr. Alex Vance',
+    name: 'Alex Vance',
     role: 'Chief Executive Officer & Founder',
     credentials: 'Ex-Google Cloud Principal Architect • PhD Stanford',
     bio: 'Pioneered distributed systems scaling for multi-billion dollar tech platforms. 18+ years leading enterprise engineering teams.',
@@ -46,7 +46,7 @@ const teamMembers = [
   {
     name: 'David Miller',
     role: 'Director of Cyber Defense',
-    credentials: 'Ex-NSA Security Specialist • CISSP',
+    credentials: 'Ex-NSA Security Specialist • CISSP Certified',
     bio: 'Ensures bank-grade Zero-Trust network security, automated vulnerability penetration testing, and SOC2 / ISO compliance.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80',
     linkedin: '#',
@@ -65,6 +65,16 @@ const teamMembers = [
   }
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
 export default function Team() {
   return (
     <section id="team" className="py-24 bg-white relative overflow-hidden">
@@ -73,7 +83,7 @@ export default function Team() {
       <div className="glow-accent bottom-10 right-10 opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
           <motion.div
@@ -110,53 +120,49 @@ export default function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {teamMembers.map((member) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="glass-card glass-card-hover rounded-3xl p-6 border border-slate-200/90 flex flex-col justify-between group relative bg-white shadow-sm"
+              variants={cardVariants}
+              className="rounded-3xl p-7 border border-slate-200 flex flex-col justify-between group bg-white hover:shadow-lg transition-all duration-300"
             >
               <div>
-                {/* Profile Image with Glowing Border */}
-                <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[4/3]">
+                {/* Profile Image */}
+                <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100 border border-slate-200">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
                   {/* Social Links Overlay */}
-                  <div className="absolute bottom-3 right-3 flex items-center gap-2">
+                  <div className="absolute bottom-3 right-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                     <a
                       href={member.linkedin}
-                      className="p-2 rounded-xl bg-white/90 hover:bg-blue-600 text-slate-700 hover:text-white border border-slate-200 transition-colors backdrop-blur-md shadow-sm"
+                      className="p-2 rounded-xl bg-white text-slate-700 hover:text-blue-600 border border-slate-200 transition-colors shadow-sm"
                       aria-label="LinkedIn"
                     >
                       <FiLinkedin className="text-sm" />
                     </a>
                     <a
                       href={member.github}
-                      className="p-2 rounded-xl bg-white/90 hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 transition-colors backdrop-blur-md shadow-sm"
+                      className="p-2 rounded-xl bg-white text-slate-700 hover:text-slate-900 border border-slate-200 transition-colors shadow-sm"
                       aria-label="GitHub"
                     >
                       <FiGithub className="text-sm" />
                     </a>
-                    <a
-                      href={member.twitter}
-                      className="p-2 rounded-xl bg-white/90 hover:bg-blue-500 text-slate-700 hover:text-white border border-slate-200 transition-colors backdrop-blur-md shadow-sm"
-                      aria-label="Twitter"
-                    >
-                      <FiTwitter className="text-sm" />
-                    </a>
                   </div>
                 </div>
 
-                <div className="inline-block px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-[11px] font-semibold text-blue-700 font-mono mb-2">
+                <div className="inline-block px-3 py-1 rounded-lg bg-blue-50 border border-blue-100 text-xs font-semibold text-blue-700 mb-3">
                   {member.role}
                 </div>
 
@@ -174,11 +180,11 @@ export default function Team() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500 font-medium">
-                <FiAward className="text-blue-600" /> Solinix Core Executive
+                <FiAward className="text-blue-600" /> Solinix Executive Team
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

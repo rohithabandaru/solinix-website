@@ -1,27 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiArrowRight, FiCheckCircle, FiZap, FiMonitor, FiUsers, FiHome } from 'react-icons/fi';
-import { FaBuilding, FaMobileAlt } from 'react-icons/fa';
 
 const products = [
   {
     id: 'pgmove',
     name: 'PGMove.in',
     tagline: 'Smart PG & Rental Management Platform',
-    description: 'A smart platform that connects people with PGs, hostels and rental accommodations while helping property owners manage listings and receive quality leads.',
+    description: 'A smart platform connecting tenants with PGs, hostels and rental accommodations while empowering property owners to manage listings and automate leads.',
     website: 'www.pgmove.in',
-    color: 'from-blue-600 via-indigo-600 to-blue-700',
     icon: FiHome,
     badge: 'Live Platform',
-    badgeDot: 'bg-blue-600',
+    badgeDot: 'bg-emerald-500',
     image: '/images/product-pgmove.webp',
     features: [
-      'Smart Property Search',
-      'Owner Dashboard',
+      'Smart Property Search & Filters',
+      'Property Owner Dashboard',
       'Digital Rental Agreements',
-      'Occupancy Management',
-      'Lead Automation',
-      'Tenant Verification',
+      'Occupancy & Lead Automation',
+      'Tenant Verification Portal',
     ],
     stats: [
       { label: 'Properties', value: '1,200+' },
@@ -33,19 +30,17 @@ const products = [
     id: 'stayzzy',
     name: 'Stayzzy.in',
     tagline: 'Complete PG & Hostel Management System',
-    description: 'A complete PG and hostel management platform built for property owners and tenants. Manage listings, collect rent, handle agreements and grow your occupancy.',
+    description: 'End-to-end management platform built for property owners and tenants. Automate rent collections, digital agreements, maintenance, and occupancy growth.',
     website: 'www.stayzzy.in',
-    color: 'from-indigo-600 via-blue-600 to-indigo-700',
     icon: FiMonitor,
     badge: 'Live Platform',
-    badgeDot: 'bg-blue-600',
+    badgeDot: 'bg-emerald-500',
     image: '/images/product-stayzzy.webp',
     features: [
-      'Tenant Management',
-      'Automated Rent Collection',
-      'Digital Agreements',
+      'Automated Rent Collections',
       'Maintenance Ticket System',
-      'Analytics & Reports',
+      'Tenant Onboarding Portal',
+      'Analytics & Financial Reports',
       'Mobile Owner App',
     ],
     stats: [
@@ -58,20 +53,18 @@ const products = [
     id: 'hrms',
     name: 'HRMS Engine',
     tagline: 'Intelligent Human Resource Automation',
-    description: 'An intelligent Human Resource Management System designed to simplify workforce management for enterprise businesses with end-to-end HR automation.',
+    description: 'An intelligent HR management suite designed to automate workforce management, biometric attendance, payroll processing, and employee lifecycle for enterprises.',
     website: null,
-    color: 'from-blue-600 via-indigo-600 to-blue-700',
     icon: FiUsers,
-    badge: 'In Beta / Coming Soon',
+    badge: 'In Beta / Private Access',
     badgeDot: 'bg-indigo-600',
     image: null,
     features: [
-      'Employee Directory',
-      'Recruitment & Onboarding',
-      'Biometric Attendance',
-      'Automated Payroll',
-      'Leave Management',
-      'Performance Analytics',
+      'Employee Directory & Roles',
+      'Biometric & Cloud Attendance',
+      'Automated Payroll Processing',
+      'Leave & Performance Analytics',
+      '15+ Enterprise Integrations',
     ],
     stats: [
       { label: 'HR Modules', value: '12+' },
@@ -136,19 +129,19 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card rounded-3xl border border-slate-200/90 p-8 lg:p-10 bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-3xl border border-slate-200 p-8 lg:p-10 shadow-sm transition-all duration-300 overflow-hidden"
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-10 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
-                  
+
                   {/* Left (or Right): Text & Details */}
                   <div className={`lg:col-span-6 ${isEven ? '' : 'lg:order-2'}`}>
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center shadow-sm">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center">
                         <Icon className="text-xl" />
                       </div>
                       <div>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200">
-                          <span className={`w-1.5 h-1.5 rounded-full ${product.badgeDot} animate-pulse`} />
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-50 text-slate-700 border border-slate-200">
+                          <span className={`w-1.5 h-1.5 rounded-full ${product.badgeDot}`} />
                           {product.badge}
                         </span>
                       </div>
@@ -166,11 +159,11 @@ export default function Products() {
                     </p>
 
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center mb-6">
+                    <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center mb-6">
                       {product.stats.map((s) => (
                         <div key={s.label}>
                           <div className="text-base font-extrabold text-blue-600">{s.value}</div>
-                          <div className="text-[10px] text-slate-500 font-medium mt-0.5">{s.label}</div>
+                          <div className="text-[10px] text-slate-500 font-medium mt-0.5 uppercase tracking-wide">{s.label}</div>
                         </div>
                       ))}
                     </div>
@@ -179,7 +172,7 @@ export default function Products() {
                     <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 mb-8">
                       {product.features.map((f, i) => (
                         <div key={i} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                          <FiCheckCircle className="text-blue-600 shrink-0 text-sm" />
+                          <FiCheckCircle className="text-blue-500 shrink-0 text-sm" />
                           <span>{f}</span>
                         </div>
                       ))}
@@ -192,13 +185,13 @@ export default function Products() {
                           href={`https://${product.website}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-95"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95"
                         >
                           <span>Visit {product.name}</span>
                           <FiExternalLink className="text-xs" />
                         </a>
                       ) : (
-                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-400 font-bold text-sm cursor-not-allowed">
+                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-400 font-semibold text-sm cursor-not-allowed">
                           <span>Coming Soon</span>
                           <FiArrowRight className="text-xs" />
                         </div>
@@ -208,22 +201,22 @@ export default function Products() {
 
                   {/* Right (or Left): Screenshot Mockup */}
                   <div className={`lg:col-span-6 ${isEven ? '' : 'lg:order-1'}`}>
-                    <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl bg-slate-50 group">
+                    <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
                       {product.image ? (
                         <img
                           src={product.image}
                           alt={product.name}
                           loading="lazy"
                           decoding="async"
-                          className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                          className="w-full h-[320px] sm:h-[380px] object-cover"
                         />
                       ) : (
-                        <div className="w-full h-[320px] sm:h-[380px] bg-gradient-to-br from-slate-100 to-blue-50/50 flex flex-col items-center justify-center p-8 text-center border border-dashed border-slate-300">
-                          <div className="w-16 h-16 rounded-2xl bg-purple-50 border border-purple-200 text-purple-600 flex items-center justify-center text-3xl mb-4">
+                        <div className="w-full h-[320px] sm:h-[380px] flex flex-col items-center justify-center p-8 text-center bg-slate-50 border-2 border-dashed border-slate-200">
+                          <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200 text-slate-400 flex items-center justify-center text-3xl mb-4">
                             <FiUsers />
                           </div>
-                          <h4 className="text-lg font-bold text-slate-900 mb-1">HRMS Automation Platform</h4>
-                          <p className="text-xs text-slate-500 max-w-xs">Private enterprise beta in progress. Stay tuned for early launch access.</p>
+                          <h4 className="text-lg font-bold text-slate-900 mb-1">Coming Soon</h4>
+                          <p className="text-xs text-slate-500 max-w-xs">Private enterprise beta in progress.</p>
                         </div>
                       )}
                     </div>
